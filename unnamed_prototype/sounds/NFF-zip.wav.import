@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/NFF-zip.wav-982dde6d3251fc1580559ffc7546714a.sample"
+
+[deps]
+
+source_file="res://sounds/NFF-zip.wav"
+dest_files=[ "res://.import/NFF-zip.wav-982dde6d3251fc1580559ffc7546714a.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

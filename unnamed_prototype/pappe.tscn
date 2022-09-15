@@ -1,0 +1,40 @@
+[gd_scene load_steps=12 format=2]
+
+[ext_resource path="res://sprites/Pappe7.png" type="Texture" id=1]
+[ext_resource path="res://sprites/Pappe1.png" type="Texture" id=2]
+[ext_resource path="res://sprites/Pappe6.png" type="Texture" id=3]
+[ext_resource path="res://sprites/Pappe3.png" type="Texture" id=4]
+[ext_resource path="res://sprites/Pappe5.png" type="Texture" id=5]
+[ext_resource path="res://sprites/Pappe8.png" type="Texture" id=6]
+[ext_resource path="res://sprites/Pappe2.png" type="Texture" id=7]
+[ext_resource path="res://sprites/Pappe4.png" type="Texture" id=8]
+[ext_resource path="res://scripts/pappe.gd" type="Script" id=9]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 134.809, 403.25 )
+
+[sub_resource type="SpriteFrames" id=2]
+animations = [ {
+"frames": [ ExtResource( 2 ) ],
+"loop": true,
+"name": "idle",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 2 ), ExtResource( 7 ), ExtResource( 4 ), ExtResource( 8 ), ExtResource( 5 ), ExtResource( 3 ), ExtResource( 1 ), ExtResource( 6 ) ],
+"loop": false,
+"name": "ignite",
+"speed": 5.0
+} ]
+
+[node name="Pappe" type="StaticBody2D" groups=[
+"Pappe",
+]]
+script = ExtResource( 9 )
+
+[node name="PappeCollider" type="CollisionShape2D" parent="."]
+shape = SubResource( 1 )
+
+[node name="PappeSprite" type="AnimatedSprite" parent="."]
+position = Vector2( 647.599, 65.5159 )
+frames = SubResource( 2 )
+animation = "idle"

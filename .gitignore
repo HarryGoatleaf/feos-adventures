@@ -1,0 +1,10 @@
+# this is from https://linuxize.com/post/gitignore-ignoring-files-in-git/
+/unnamed_prototype/.import/
+*.translation
+/unnamed_prototype/export_presets.cfg
+unnamed_prototype/mono/
+
+# exclude export dir
+/unnamed_prototype/export/
+
+drache_skizzen.kra

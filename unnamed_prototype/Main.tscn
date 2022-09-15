@@ -1,0 +1,65 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://scripts/PauseMenu.gd" type="Script" id=1]
+[ext_resource path="res://scripts/Main.gd" type="Script" id=2]
+[ext_resource path="res://player.tscn" type="PackedScene" id=3]
+[ext_resource path="res://UI/new_dynamicfont.tres" type="DynamicFont" id=4]
+[ext_resource path="res://ParallaxBackground.tscn" type="PackedScene" id=6]
+
+[node name="Main" type="Node"]
+script = ExtResource( 2 )
+
+[node name="player" parent="." instance=ExtResource( 3 )]
+position = Vector2( -1297.64, -736.427 )
+z_index = 5
+
+[node name="PauseMenu" type="VBoxContainer" parent="player"]
+pause_mode = 2
+visible = false
+margin_left = -435.565
+margin_top = 153.235
+margin_right = -153.496
+margin_bottom = 371.235
+rect_scale = Vector2( 2.8869, 2.46478 )
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="button_continue" type="Button" parent="player/PauseMenu"]
+margin_right = 282.0
+margin_bottom = 70.0
+custom_fonts/font = ExtResource( 4 )
+text = "Continue"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="button_menu" type="Button" parent="player/PauseMenu"]
+margin_top = 74.0
+margin_right = 282.0
+margin_bottom = 144.0
+custom_fonts/font = ExtResource( 4 )
+text = "Menu"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="button_quit" type="Button" parent="player/PauseMenu"]
+margin_top = 148.0
+margin_right = 282.0
+margin_bottom = 218.0
+custom_fonts/font = ExtResource( 4 )
+text = "Save&Quit"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ParallaxBackground" parent="." instance=ExtResource( 6 )]
+[connection signal="collision" from="player" to="." method="_on_player_collision"]
+[connection signal="feuer" from="player" to="." method="_on_player_feuer"]
+[connection signal="feuer" from="player" to="player" method="_on_player_feuer"]
+[connection signal="win" from="player" to="." method="_on_player_win"]
+[connection signal="pressed" from="player/PauseMenu/button_continue" to="player/PauseMenu" method="_on_button_continue_pressed"]
+[connection signal="pressed" from="player/PauseMenu/button_menu" to="player/PauseMenu" method="_on_button_menu_pressed"]
+[connection signal="pressed" from="player/PauseMenu/button_quit" to="player/PauseMenu" method="_on_button_quit_pressed"]

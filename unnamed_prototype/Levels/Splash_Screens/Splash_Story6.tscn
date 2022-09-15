@@ -1,0 +1,23 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://sprites/Wirbelsturm2.png" type="Texture" id=1]
+[ext_resource path="res://scripts/Splash_Screen.gd" type="Script" id=2]
+[ext_resource path="res://sprites/Wirbelsturm3.png" type="Texture" id=3]
+[ext_resource path="res://sprites/Wirbelsturm4.png" type="Texture" id=4]
+[ext_resource path="res://sprites/Wirbelsturm1.png" type="Texture" id=5]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 5 ), ExtResource( 1 ), ExtResource( 3 ), ExtResource( 4 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[node name="Node2D" type="Node"]
+script = ExtResource( 2 )
+
+[node name="slides" type="AnimatedSprite" parent="."]
+position = Vector2( 966.323, 558.123 )
+scale = Vector2( 1.79517, 1.53816 )
+frames = SubResource( 1 )
